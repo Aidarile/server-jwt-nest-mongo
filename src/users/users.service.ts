@@ -33,4 +33,8 @@ export class UsersService {
   remove(id: string) {
     return this.userModel.findByIdAndDelete(id).exec();
   }
+
+  findByUserName(username: string) {
+    return this.userModel.findOne( {username: username} ).exec();
+  }
 }
